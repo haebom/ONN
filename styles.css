@@ -1,0 +1,319 @@
+/* 모달 스타일 */
+.concept-explorer-modal,
+.concept-expand-modal {
+  width: 800px;
+  max-width: 90vw;
+}
+
+.button-container {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+  justify-content: flex-end;
+}
+
+.button-container button {
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  background-color: var(--background-secondary);
+  border: 1px solid var(--background-modifier-border);
+  color: var(--text-normal);
+  transition: all 0.2s ease;
+}
+
+.button-container button:hover {
+  background-color: var(--background-modifier-hover);
+}
+
+.button-container button:first-child {
+  background-color: var(--interactive-accent);
+  color: var(--text-on-accent);
+}
+
+.button-container button:first-child:hover {
+  background-color: var(--interactive-accent-hover);
+}
+
+/* 개념 연결 노드 스타일 */
+.concept-node {
+  fill: var(--interactive-accent);
+  stroke: var(--background-primary);
+  stroke-width: 2px;
+}
+
+.concept-node.current {
+  fill: var(--text-accent);
+}
+
+.concept-node.last-added {
+  fill: var(--text-success);
+}
+
+.concept-link {
+  stroke: var(--text-muted);
+  stroke-width: 2px;
+}
+
+/* 개념 탐색기 스타일 */
+.concept-explorer-modal,
+.concept-result-modal,
+.concept-expand-modal {
+  padding: 30px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.concept-list {
+  margin-bottom: 20px;
+}
+
+.concept-item {
+  margin-bottom: 10px;
+  list-style-type: disc;
+}
+
+.concept-item button {
+  background: none;
+  border: none;
+  padding: 4px 8px;
+  margin: 0;
+  font: inherit;
+  cursor: pointer;
+  color: var(--text-accent);
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+  text-align: left;
+}
+
+.concept-item button:hover {
+  background-color: var(--background-secondary);
+  text-decoration: underline;
+}
+
+.loading {
+  display: block;
+  margin: 20px 0;
+  font-style: italic;
+  color: var(--text-muted);
+}
+
+.generation-status {
+  margin: 10px 0;
+  font-size: 0.9em;
+  color: var(--text-muted);
+}
+
+.cancel-button-container {
+  display: flex;
+  justify-content: center;
+  margin: 15px 0;
+}
+
+.cancel-button-container button {
+  padding: 8px 16px;
+  border-radius: 4px;
+  background-color: var(--background-modifier-error-hover);
+  color: var(--text-error);
+  border: 1px solid var(--background-modifier-border);
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.2s ease;
+}
+
+.cancel-button-container button:hover {
+  background-color: var(--text-error);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+}
+
+.error-message {
+  color: var(--text-error);
+  margin: 20px 0;
+  padding: 10px;
+  border-left: 3px solid var(--text-error);
+  background-color: rgba(255, 0, 0, 0.05);
+}
+
+.path {
+  font-size: 0.9em;
+  margin-bottom: 20px;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+/* 페이드인 애니메이션 */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+  animation: fadeIn 0.3s ease-in-out forwards;
+}
+
+/* 각 아이템별로 지연 애니메이션 적용 */
+.concept-item:nth-child(1) { animation-delay: 0.05s; }
+.concept-item:nth-child(2) { animation-delay: 0.1s; }
+.concept-item:nth-child(3) { animation-delay: 0.15s; }
+.concept-item:nth-child(4) { animation-delay: 0.2s; }
+.concept-item:nth-child(5) { animation-delay: 0.25s; }
+.concept-item:nth-child(6) { animation-delay: 0.3s; }
+.concept-item:nth-child(7) { animation-delay: 0.35s; }
+.concept-item:nth-child(8) { animation-delay: 0.4s; }
+.concept-item:nth-child(9) { animation-delay: 0.45s; }
+.concept-item:nth-child(10) { animation-delay: 0.5s; }
+.concept-item:nth-child(n+11) { animation-delay: 0.55s; }
+
+/* 모달 패딩 및 버튼 효과 */
+.concept-result-modal {
+  padding: 20px;
+}
+
+.concept-result-modal button {
+  transition: all 0.2s ease;
+}
+
+.concept-result-modal button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* 로딩 메시지 스타일 */
+.loading {
+  margin: 1rem 0;
+  font-style: italic;
+  color: var(--text-muted);
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { opacity: 0.6; }
+  50% { opacity: 1; }
+  100% { opacity: 0.6; }
+}
+
+/* 에러 메시지 스타일 */
+.error-message {
+  color: var(--text-error);
+  padding: 10px;
+  border-left: 3px solid var(--text-error);
+  background-color: rgba(255, 0, 0, 0.05);
+}
+
+/* 개념 항목 페이드인 애니메이션 */
+.concept-item {
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeIn 0.5s ease forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 각 항목마다 딜레이 설정 */
+.concept-item:nth-child(1) { animation-delay: 0.05s; }
+.concept-item:nth-child(2) { animation-delay: 0.1s; }
+.concept-item:nth-child(3) { animation-delay: 0.15s; }
+.concept-item:nth-child(4) { animation-delay: 0.2s; }
+.concept-item:nth-child(5) { animation-delay: 0.25s; }
+.concept-item:nth-child(6) { animation-delay: 0.3s; }
+.concept-item:nth-child(7) { animation-delay: 0.35s; }
+.concept-item:nth-child(8) { animation-delay: 0.4s; }
+.concept-item:nth-child(9) { animation-delay: 0.45s; }
+.concept-item:nth-child(10) { animation-delay: 0.5s; }
+.concept-item:nth-child(n+11) { animation-delay: 0.55s; }
+
+/* 생성 상태 스타일 */
+.generation-status {
+  margin-top: 1rem;
+  font-size: 0.9em;
+  color: var(--text-muted);
+}
+
+/* 경로 표시 스타일 */
+.path {
+  font-size: 0.9em;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+  border-bottom: 1px solid var(--background-modifier-border);
+  padding-bottom: 0.5rem;
+}
+
+/* 개념 목록 스타일 */
+.concept-list {
+  margin: 1rem 0;
+  padding-left: 0;
+}
+
+.concept-list li {
+  list-style: none;
+  margin-bottom: 0.5rem;
+}
+
+.concept-list button {
+  width: 100%;
+  text-align: left;
+  padding: 8px 12px;
+  border-radius: 4px;
+  background-color: var(--background-secondary);
+}
+
+/* 버튼 컨테이너 스타일 */
+.button-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1rem;
+  gap: 10px;
+}
+
+.cancel-button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+/* 제목 스타일 */
+.concept-result-modal h2 {
+  margin-bottom: 0.5rem;
+  border-bottom: 2px solid var(--interactive-accent);
+  padding-bottom: 0.5rem;
+}
+
+/* 진행률 표시기 스타일 */
+.progress-container {
+  margin: 20px 0;
+  padding: 10px;
+  background: var(--background-secondary);
+  border-radius: 8px;
+  border: 1px solid var(--background-modifier-border);
+}
+
+.progress-bar-bg {
+  width: 100%;
+  height: 12px;
+  background: var(--background-primary);
+  border-radius: 6px;
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background: var(--interactive-accent);
+  width: 0;
+  transition: width 0.3s ease;
+  border-radius: 6px;
+}
+
+.progress-text {
+  font-size: 0.85em;
+  color: var(--text-muted);
+  text-align: center;
+} 

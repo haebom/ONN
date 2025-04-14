@@ -1,0 +1,10 @@
+{
+	"id": "obsidian-neural-network",
+	"name": "Obsidian Neural Network",
+	"version": "1.0.0",
+	"minAppVersion": "0.15.0",
+	"description": "A tool for exploring and expanding concepts as a neural network using LLMs",
+	"author": "Haebom",
+	"authorUrl": "https://github.com/haebom",
+	"isDesktopOnly": true
+} 

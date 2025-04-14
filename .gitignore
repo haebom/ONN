@@ -1,0 +1,43 @@
+# Node.js 관련 파일
+node_modules/
+npm-debug.log
+yarn-error.log
+yarn-debug.log
+.pnp.*
+.pnp/
+*.tgz
+
+# 빌드 결과물
+build/
+dist/
+main.js
+*.bak
+*.bak.*
+*.backup
+*.old
+
+# 도구 및 백업 파일
+.eslintcache
+.DS_Store
+.vscode/
+.idea/
+.vs/
+thumbs.db
+desktop.ini
+
+# 환경 설정
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# 캐시 및 로그
+*.log
+logs/
+.cache/
+.temp/
+
+# 테스트 결과물
+coverage/
+.nyc_output/ 
