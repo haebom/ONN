@@ -238,4 +238,4 @@ Please submit improvements or bug reports through GitHub issues.
 
 ---
 
-Developer: [Your Name](https://github.com/yourusername) 
+Developer: Haebom
